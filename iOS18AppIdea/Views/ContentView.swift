@@ -52,7 +52,7 @@ struct ContentView: View {
                 List {
                     ForEach(viewModel.items.filter { searchText.isEmpty || $0.title.localizedCaseInsensitiveContains(searchText) }) { item in
                         NavigationLink(destination: TaskDetailView(item: item)) {
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .leading, spacing: 4) {
                                 Text(item.priority.rawValue.capitalized)
                                     .foregroundColor(item.priority.color)
                                     .font(.headline)
